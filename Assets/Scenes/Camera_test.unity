@@ -482,7 +482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Magnify_speed: 10000
   max_magnify: 0.2
-  min_magnify: -10
-  InvertControlls: 0
+  min_magnify: -20
   MouseMoveSpeed: 100
+  MouseInputTemp: 10
   KeyboardMoveSpeed: 100
