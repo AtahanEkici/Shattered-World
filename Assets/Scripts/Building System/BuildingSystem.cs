@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -83,12 +83,13 @@ public class BuildingSystem : MonoBehaviour
             {
                 return false;
             }
-            return true;
+            //return true; // Onat burayı ben değiştirdim sorunu gidermek için bir sıkıntı varsa ilk buraya bak //
         }
+        return true;
     } 
     public void TakeArea(Vector3Int start, Vector3Int size)
     {
-        MainTilemap.BoxFill(start, start.x, start.y, start.x + size.x, start.y + size.y);
+        MainTilemap.BoxFill(start, BuildingTilemap, start.x, start.y, start.x + size.x, start.y + size.y); // 2. Parametreye tilebase referansını verdim //
     }
     #endregion
 
