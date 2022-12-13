@@ -36,9 +36,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Camera\Camera_Controller.cs" />
      <Compile Include="Assets\Scripts\Scriptable Objects\Pawns\PawnTest.cs" />
+     <Compile Include="Assets\Scripts\Camera\Camera_Controller.cs" />
      <Compile Include="Assets\Scripts\Scriptable Objects\Items\ItemTest.cs" />
+     <Compile Include="Assets\Scripts\Building System\BuildingSystem.cs" />
+     <Compile Include="Assets\Scripts\Building System\ObjectDrag.cs" />
+     <Compile Include="Assets\Scripts\Building System\PlaceableObject.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity Hub\Unity Editor\2021.3.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -719,6 +722,15 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
         <HintPath>D:\Shattered-World\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+        <HintPath>D:\Shattered-World\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras">
+        <HintPath>D:\Shattered-World\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras.Editor">
+        <HintPath>D:\Shattered-World\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
