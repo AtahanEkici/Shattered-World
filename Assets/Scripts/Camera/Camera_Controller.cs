@@ -15,20 +15,13 @@ public class Camera_Controller : MonoBehaviour
 
     private void LateUpdate()
     {
-       //MoveWithKeyboard();
-        MoveWithMouse();
-       // Magnify();
+       MoveWithKeyboard();
+       MoveWithMouse();
+       Magnify();
     }
 
     private void MoveWithMouse()
     {
-        /*
-        float x = Input.GetAxisRaw("Mouse X");
-        float y = Input.GetAxisRaw("Mouse Y");
-
-        if (x == 0 && y == 0) { return; }
-        */
-
         Vector3 mousepos = Input.mousePosition;
 
         float mouse_x = mousepos.x;
@@ -44,23 +37,23 @@ public class Camera_Controller : MonoBehaviour
 
         if(mouse_x <= (0 + MouseInputTemp))
         {
-            Debug.Log("Sol");
+            Debug.Log("Left");
             transform.Translate(-1f * MouseMoveSpeed * Time.unscaledDeltaTime * Vector3.right);
         }
         else if(mouse_x >= (width - MouseInputTemp))
         {
-            Debug.Log("Sağ");
+            Debug.Log("Right");
             transform.Translate(MouseMoveSpeed * Time.unscaledDeltaTime * Vector3.right); 
         }
 
         if (mouse_y >= (height - MouseInputTemp))
         {
-            Debug.Log("Yukarı");
+            Debug.Log("Up");
             transform.Translate(MouseMoveSpeed * Time.unscaledDeltaTime * (0.5f * (Vector3.up + Vector3.forward)));
         }
         else if (mouse_y <= (0 + MouseInputTemp))
         {
-            Debug.Log("Aşağı");
+            Debug.Log("Down");
             transform.Translate(-1f * MouseMoveSpeed * Time.unscaledDeltaTime * (0.5f * (Vector3.up + Vector3.forward)));
         }
 
