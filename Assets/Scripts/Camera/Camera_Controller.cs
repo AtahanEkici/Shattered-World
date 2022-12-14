@@ -1,66 +1,69 @@
 ﻿using UnityEngine;
 public class Camera_Controller : MonoBehaviour
 {
-    [Header("Mouse Inputs")]
+    [Header("Mouse Magnify Inputs")]
     [SerializeField]private float Magnify_speed = 100f;
     [SerializeField]private float max_magnify = 0.2f;
     [SerializeField]private float min_magnify = -10f;
-    //[SerializeField] private bool InvertControlls = false;
+
+    [Header("Mouse Movement Inputs")]
     [SerializeField]private float MouseMoveSpeed = 100f;
     [SerializeField]private float MouseInputTemp = 0f;
-    
+
+    [Header("Mouse Boundary Restrictions")]
+    [SerializeField]private float up_boundary = 50f;
+    [SerializeField]private float down_boundary = -50f;
+    [SerializeField] private float left_boundary = -50f;
+    [SerializeField] private float right_boundary = 50f;
 
     [Header("Keyboard  Inputs")]
     [SerializeField] private float KeyboardMoveSpeed = 100f;
 
     private void LateUpdate()
     {
-       //MoveWithKeyboard();
-        MoveWithMouse();
-       // Magnify();
+       MoveWithKeyboard();
+       MoveWithMouse();
+       Magnify();
     }
-
     private void MoveWithMouse()
     {
-        /*
-        float x = Input.GetAxisRaw("Mouse X");
-        float y = Input.GetAxisRaw("Mouse Y");
-
-        if (x == 0 && y == 0) { return; }
-        */
-
         Vector3 mousepos = Input.mousePosition;
 
         float mouse_x = mousepos.x;
         float mouse_y = mousepos.y;
-
         float width = Screen.width;
         float height = Screen.height;
 
+        /*
         if(Input.GetMouseButtonDown(0))
         {
             Debug.Log("Width: "+width+" - Mouse_x: "+mouse_x+"");
         }
+        */
 
-        if(mouse_x <= (0 + MouseInputTemp))
+        Vector3 pos = this.transform.position;
+        float pos_x = pos.x;
+        float pos_z = pos.z;
+
+        if(mouse_x <= (0 + MouseInputTemp) && pos_x >= left_boundary) // Move left //
         {
-            Debug.Log("Sol");
+            //Debug.Log("Left");
             transform.Translate(-1f * MouseMoveSpeed * Time.unscaledDeltaTime * Vector3.right);
         }
-        else if(mouse_x >= (width - MouseInputTemp))
+        else if(mouse_x >= (width - MouseInputTemp) && pos_x <= right_boundary) // Move Right //
         {
-            Debug.Log("Sağ");
+            //Debug.Log("Right");
             transform.Translate(MouseMoveSpeed * Time.unscaledDeltaTime * Vector3.right); 
         }
 
-        if (mouse_y >= (height - MouseInputTemp))
+        if (mouse_y >= (height - MouseInputTemp) && pos_z <= up_boundary) // Move up //
         {
-            Debug.Log("Yukarı");
+            //Debug.Log("Up "+ pos_z + " :  "+up_boundary+"");
             transform.Translate(MouseMoveSpeed * Time.unscaledDeltaTime * (0.5f * (Vector3.up + Vector3.forward)));
         }
-        else if (mouse_y <= (0 + MouseInputTemp))
+        else if (mouse_y <= (0 + MouseInputTemp) && pos_z >= down_boundary) // Move Down //
         {
-            Debug.Log("Aşağı");
+            //Debug.Log("Down");
             transform.Translate(-1f * MouseMoveSpeed * Time.unscaledDeltaTime * (0.5f * (Vector3.up + Vector3.forward)));
         }
 
@@ -105,8 +108,8 @@ public class Camera_Controller : MonoBehaviour
         float y = Input.GetAxisRaw("Vertical");
         if (x == 0 && y == 0) { return; }
         Vector3 moveBy = (Vector3.right * x) + ((Vector3.up+Vector3.forward) * 0.5f * y);
-        Debug.DrawRay(Camera.main.transform.position, Vector3.forward * 100f,Color.black);
-        transform.Translate(KeyboardMoveSpeed * Time.deltaTime * moveBy.normalized);
+        //Debug.DrawRay(Camera.main.transform.position, Vector3.forward * 100f,Color.black);
+        transform.Translate(KeyboardMoveSpeed * Time.unscaledDeltaTime * moveBy.normalized);
     }
 
     private void Magnify()
