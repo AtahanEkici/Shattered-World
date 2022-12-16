@@ -59,7 +59,7 @@ public class Camera_Controller : MonoBehaviour
         if (mouse_y >= (height - MouseInputTemp) && pos_z <= up_boundary) // Move up //
         {
             //Debug.Log("Up "+ pos_z + " :  "+up_boundary+"");
-            transform.Translate(MouseMoveSpeed * Time.unscaledDeltaTime * (0.5f * (Vector3.up + Vector3.forward)));
+            transform.Translate(MouseMoveSpeed * Time.unscaledDeltaTime * (0.5f * (Vector3.up + Vector3.forward))); // 
         }
         else if (mouse_y <= (0 + MouseInputTemp) && pos_z >= down_boundary) // Move Down //
         {
