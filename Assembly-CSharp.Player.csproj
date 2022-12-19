@@ -47,7 +47,7 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.16</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>2.0.17</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2021.3.15f1</UnityVersion>
@@ -59,9 +59,14 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\Pawns\PawnTest.cs" />
     <Compile Include="Assets\Scripts\Building System\ObjectDrag.cs" />
     <Compile Include="Assets\Scripts\Camera\Camera_Controller.cs" />
+    <Compile Include="Assets\Scripts\Controller\GlobalSelection.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\Items\ItemTest.cs" />
     <Compile Include="Assets\Scripts\Building System\BuildingSystem.cs" />
+    <Compile Include="Assets\Scripts\Controller\SelectionComponent.cs" />
+    <Compile Include="Assets\Scripts\Inventory\Inventory_Manager.cs" />
+    <Compile Include="Assets\Scripts\Controller\SelectedDictionary.cs" />
     <Compile Include="Assets\Scripts\Building System\PlaceableObject.cs" />
+    <Compile Include="Assets\Scripts\Controller\Select.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
