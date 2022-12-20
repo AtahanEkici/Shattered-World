@@ -2,3 +2,5 @@
 *.7z
 *.tar
 Library/*
+Logs/*
+obj/*
