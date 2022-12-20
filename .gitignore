@@ -1,4 +1,4 @@
 *.meta
 *.7z
 *.tar
-*/Library
+*Library/
