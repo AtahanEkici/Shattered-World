@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{BE2B5B97-06AE-8F85-046E-FA6099ACF36B}</ProjectGuid>
+    <ProjectGuid>{6088822A-65BC-306A-D872-7A14C2E5066F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.VisualScripting.Core.Editor</AssemblyName>
@@ -156,8 +156,8 @@
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Plugin\Acknowledgements\Acknowledgement_AqnParser.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Reflection\TypeOption.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Widgets\Nodes\NodeColor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Inspection\Primitives\DecimalInspector.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Description\GraphElementDescription.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Inspection\Primitives\DecimalInspector.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Decorators\MultiDecoratorProvider.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Canvases\AlignOperation.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Windows\AboutWindow\IAboutable.cs" />
@@ -1232,23 +1232,23 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.VisualScripting.Core.csproj">
-      <Project>{94657813-0DE9-36CA-9A83-0F4F9B533E50}</Project>
+      <Project>{80607D65-6136-3E75-5927-C4503D19656B}</Project>
       <Name>Unity.VisualScripting.Core</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{5FA3F7A9-858C-6433-4661-6E647F51EDF6}</Project>
+      <Project>{4E2DBAE1-456D-50B1-FA3E-EAF11DD96A2D}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{7FBAFFEF-0C8C-37CD-8AFA-A3D2C48FECAB}</Project>
+      <Project>{BE77F135-F3A1-E9D7-316A-1EEC2621017F}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{317F802F-872F-884D-8C68-D6487F69B4C4}</Project>
+      <Project>{56AA67AE-E150-5792-42FE-AC8CDD250F0A}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{C5083B6C-00BF-0D04-AFCA-F249E7183208}</Project>
+      <Project>{CB451E42-B4C3-20DC-AC17-6EEE6195CE2A}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>

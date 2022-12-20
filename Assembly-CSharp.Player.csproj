@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{C020E324-2E11-28F0-6F0D-6662EA1E0D0B}</ProjectGuid>
+    <ProjectGuid>{DFE02213-08F4-7C37-9413-C0DBF399665F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -47,7 +47,7 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.17</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>2.0.16</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2021.3.15f1</UnityVersion>
@@ -59,14 +59,15 @@
     <Compile Include="Assets\Scripts\Scriptable Objects\Pawns\PawnTest.cs" />
     <Compile Include="Assets\Scripts\Building System\ObjectDrag.cs" />
     <Compile Include="Assets\Scripts\Camera\Camera_Controller.cs" />
+    <Compile Include="Assets\Scripts\Inventory\Item.cs" />
     <Compile Include="Assets\Scripts\Controller\GlobalSelection.cs" />
+    <Compile Include="Assets\Scripts\Controller\Select.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\Items\ItemTest.cs" />
     <Compile Include="Assets\Scripts\Building System\BuildingSystem.cs" />
     <Compile Include="Assets\Scripts\Controller\SelectionComponent.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory_Manager.cs" />
     <Compile Include="Assets\Scripts\Controller\SelectedDictionary.cs" />
     <Compile Include="Assets\Scripts\Building System\PlaceableObject.cs" />
-    <Compile Include="Assets\Scripts\Controller\Select.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -645,43 +646,43 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.2D.Tilemap.Extras.Player.csproj">
-      <Project>{0EDB9DF4-43E3-A572-EFFE-526FCF4BB856}</Project>
+      <Project>{B8CE342E-9986-8D73-85FD-7972E15D8F22}</Project>
       <Name>Unity.2D.Tilemap.Extras.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.Player.csproj">
-      <Project>{A193A200-F1A3-1057-1F8A-014ED16E7EC7}</Project>
+      <Project>{09D52C92-410C-292D-8C7C-CC86543EE790}</Project>
       <Name>Unity.Timeline.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
-      <Project>{64065B9D-21EE-B21A-2FDB-C58C28E9A930}</Project>
+      <Project>{DCEF5FBE-ECE0-5DA1-088C-524933C91D1A}</Project>
       <Name>Unity.TextMeshPro.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.Player.csproj">
-      <Project>{F3F2D70E-C5EE-A430-3861-B694175E7192}</Project>
+      <Project>{41DD9977-1BFB-8E00-54DE-C57B1A635DB7}</Project>
       <Name>Unity.VisualScripting.Flow.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{C9AAE1F7-D595-5E5D-A579-8DD15F633FF4}</Project>
+      <Project>{C32FA9D4-0B15-CA78-B837-0459583B8CFD}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Services.Core.Player.csproj">
-      <Project>{A28EF725-E8F1-B378-240A-368414D6AD34}</Project>
+      <Project>{EF55F9BB-9355-6FCC-2F5F-E69CC06B0427}</Project>
       <Name>Unity.Services.Core.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
-      <Project>{582F1B35-9A2F-40F6-E04F-69B56BC4EF70}</Project>
+      <Project>{3F74114B-BCFE-FD63-6A85-E1F6830CF2E7}</Project>
       <Name>Unity.VisualScripting.Core.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Services.Core.Analytics.Player.csproj">
-      <Project>{B9154603-06AB-9F10-BD61-07A70E6EFB8D}</Project>
+      <Project>{9679D195-6FD6-CF62-7EAE-EFB3B1B9CAA1}</Project>
       <Name>Unity.Services.Core.Analytics.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Services.Core.Environments.Player.csproj">
-      <Project>{4D260730-46FB-0F43-B495-D8D8AB30120C}</Project>
+      <Project>{6D80DDF0-FE4C-D1DE-14D0-81FE46688419}</Project>
       <Name>Unity.Services.Core.Environments.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
-      <Project>{41EE9144-3F24-688B-1F78-F6A78CFB9563}</Project>
+      <Project>{03894D5C-7E40-3DF3-A6C9-BAE20C225054}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
     </ProjectReference>
   </ItemGroup>
