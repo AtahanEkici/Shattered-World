@@ -363,6 +363,7 @@
 "Assets/Scripts/Controller/Select.cs"
 "Assets/Scripts/Controller/SelectedDictionary.cs"
 "Assets/Scripts/Controller/SelectionComponent.cs"
+"Assets/Scripts/Inventory/Canvas_Controller.cs"
 "Assets/Scripts/Inventory/Inventory_Manager.cs"
 "Assets/Scripts/Inventory/Item.cs"
 "Assets/Scripts/Scriptable Objects/Items/ItemTest.cs"

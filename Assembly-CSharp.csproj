@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Inventory\Inventory_Manager.cs" />
     <Compile Include="Assets\Scripts\Controller\SelectedDictionary.cs" />
     <Compile Include="Assets\Scripts\Building System\PlaceableObject.cs" />
+    <Compile Include="Assets\Scripts\Inventory\Canvas_Controller.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

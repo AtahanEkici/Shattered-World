@@ -7,9 +7,4 @@ public class Item : MonoBehaviour
     {
         item_name = this.name;
     }
-
-    private void Update()
-    {
-        
-    }
 }

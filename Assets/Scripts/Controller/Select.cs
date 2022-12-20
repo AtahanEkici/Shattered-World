@@ -5,7 +5,7 @@ public class Select : MonoBehaviour
     [SerializeField] private GameObject CurrentSelectedEntity = null;
     [SerializeField] private LayerMask layer_mask;
     [SerializeField] private string tag_of_object;
-    [SerializeField] private GameObject Inventory_Canvas;
+    [SerializeField] public GameObject Inventory_Canvas;
 
     private void Awake()
     {
@@ -46,6 +46,7 @@ public class Select : MonoBehaviour
             else
             {
                 CurrentSelectedEntity = null; // if the raycast did not hit a playable object drop the current selected object //
+                Canvas_Controller.DeleteAllChildren();
                 Debug.Log("Selected object dropped");
             }
         }
