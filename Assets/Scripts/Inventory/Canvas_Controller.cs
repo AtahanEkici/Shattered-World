@@ -4,37 +4,39 @@ using UnityEngine.UI;
 
 public class Canvas_Controller : MonoBehaviour
 {
-    [SerializeField]private static GameObject Inventory_Panel;
-    [SerializeField]private static Transform this_transform;
+    private static GameObject Inventory_Panel;
+    private static float next_object_length = 0f;
+    private static readonly Vector2 half = new(0.5f, 0.5f);
 
     private void Awake()
     {
         Inventory_Panel = transform.GetChild(0).gameObject;
-        this_transform = this.transform;
     }
     public static void AddImages(List<Item> list)
     {
         for (int i=0;i<list.Count;i++)
         {
             GameObject imgObject = new(list[i].name);
-            /*
             RectTransform trans = imgObject.AddComponent<RectTransform>();
-            trans.anchoredPosition = new Vector2(0.5f, 0.5f);
-            trans.localPosition = Vector3.zero;
-            trans.position = Vector3.zero;
-            */
-
             Image image = imgObject.AddComponent<Image>();
-            image.sprite = list[i].icon; 
             imgObject.transform.SetParent(Inventory_Panel.transform);
+
+            image.sprite = list[i].icon;
+            trans.localScale = Vector3.one;
+            trans.anchorMax = half;
+            trans.anchorMin = half;
+            trans.pivot = Vector2.zero;
+            trans.position = new Vector3(next_object_length, 0f, 0f);
+            next_object_length += trans.sizeDelta.x;
         }
     }
     [System.Obsolete]
     public static void DeleteAllChildren()
     {
-        for(int i=0;i<this_transform.GetChildCount(); i++)
+        for(int i=0;i< Inventory_Panel.transform.GetChildCount(); i++)
         {
-            Destroy(this_transform.GetChild(i).gameObject);
+            Destroy(Inventory_Panel.transform.GetChild(i).gameObject);
         }
+        next_object_length = 0f; 
     }
 }
