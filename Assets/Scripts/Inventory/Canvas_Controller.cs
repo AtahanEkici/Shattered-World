@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Canvas_Controller : MonoBehaviour
 {
-    private static GameObject Inventory_Panel;
+    [SerializeField]private static GameObject Inventory_Panel;
     private static float next_object_length = 0f;
     private static readonly Vector2 half = new(0.5f, 0.5f);
 

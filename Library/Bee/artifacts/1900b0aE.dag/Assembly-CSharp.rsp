@@ -368,6 +368,7 @@
 "Assets/Scripts/Inventory/Item.cs"
 "Assets/Scripts/Scriptable Objects/Items/ItemTest.cs"
 "Assets/Scripts/Scriptable Objects/Pawns/PawnTest.cs"
+"Assets/Scripts/Unit/Unit_Controller.cs"
 -langversion:9.0
 
 /deterministic

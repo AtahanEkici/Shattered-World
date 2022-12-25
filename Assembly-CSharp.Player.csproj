@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Scriptable Objects\Pawns\PawnTest.cs" />
     <Compile Include="Assets\Scripts\Building System\ObjectDrag.cs" />
+    <Compile Include="Assets\Scripts\Unit\Unit_Controller.cs" />
     <Compile Include="Assets\Scripts\Camera\Camera_Controller.cs" />
     <Compile Include="Assets\Scripts\Inventory\Item.cs" />
     <Compile Include="Assets\Scripts\Controller\GlobalSelection.cs" />
