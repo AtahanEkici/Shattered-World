@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638075914821415568
-    m_Hash: 3815129710
+      ticks: 638076383497329411
+    m_Hash: 317001897
   m_LockFileStatus:
     m_FilePath: F:/Shattered-World/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638075914821455604
-    m_Hash: 3877993144
+      ticks: 638076383497359454
+    m_Hash: 1825869240
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -73,12 +73,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.0.0
     nextVersion: 
-- packageId: com.unity.2d.tilemap.extras@2.2.3
+- packageId: com.unity.2d.tilemap.extras@2.2.4
   testable: 0
   isDirectDependency: 1
-  version: 2.2.3
+  version: 2.2.4
   source: 1
-  resolvedPath: F:\Shattered-World\Library\PackageCache\com.unity.2d.tilemap.extras@2.2.3
+  resolvedPath: F:\Shattered-World\Library\PackageCache\com.unity.2d.tilemap.extras@2.2.4
   assetPath: Packages/com.unity.2d.tilemap.extras
   name: com.unity.2d.tilemap.extras
   displayName: 2D Tilemap Extras
@@ -173,13 +173,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 637892785880000000
-  documentationUrl: 
+  datePublishedTicks: 638067887390000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.2d.tilemap.extras@2.2/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.com/Unity-Technologies/2d-extras.git
-    revision: 23a879f6458e28d4082f486e6c2375ef4c281145
+    revision: 2d8c9252168c8fe6d11dce4cfeb56d4d4ade3a70
     path: 
   unityLifecycle:
     version: 2.2.3
@@ -329,12 +329,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.17.7
     nextVersion: 
-- packageId: com.unity.ide.rider@3.0.16
+- packageId: com.unity.ide.rider@3.0.17
   testable: 0
   isDirectDependency: 1
-  version: 3.0.16
+  version: 3.0.17
   source: 1
-  resolvedPath: F:\Shattered-World\Library\PackageCache\com.unity.ide.rider@3.0.16
+  resolvedPath: F:\Shattered-World\Library\PackageCache\com.unity.ide.rider@3.0.17
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -405,23 +405,23 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 638011833630000000
-  documentationUrl: 
+  datePublishedTicks: 638058509720000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.rider@3.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
-    revision: 9b718d58b8f7a34e564f2c79af6d2ca788e929d4
+    revision: b8990fdcd79dc09dafde1a184f5e4b898fb5f19b
     path: 
   unityLifecycle:
     version: 3.0.16
     nextVersion: 
-- packageId: com.unity.ide.visualstudio@2.0.16
+- packageId: com.unity.ide.visualstudio@2.0.17
   testable: 0
   isDirectDependency: 1
-  version: 2.0.16
+  version: 2.0.17
   source: 1
-  resolvedPath: F:\Shattered-World\Library\PackageCache\com.unity.ide.visualstudio@2.0.16
+  resolvedPath: F:\Shattered-World\Library\PackageCache\com.unity.ide.visualstudio@2.0.17
   assetPath: Packages/com.unity.ide.visualstudio
   name: com.unity.ide.visualstudio
   displayName: Visual Studio Editor
@@ -467,7 +467,7 @@ m_ResolvedPackages:
     version: 1.1.9
   resolvedDependencies:
   - name: com.unity.test-framework
-    version: 1.1.31
+    version: 1.1.33
   - name: com.unity.ext.nunit
     version: 1.0.6
   - name: com.unity.modules.imgui
@@ -485,13 +485,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 637914298680000000
-  documentationUrl: 
+  datePublishedTicks: 638059987360000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.visualstudio@2.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.visualstudio.git
-    revision: c01855ef6461b821ab0226135e96a4ee86de96be
+    revision: 1f126893bfb18ea9661fb15771613e841467073c
     path: 
   unityLifecycle:
     version: 2.0.16
@@ -558,12 +558,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.2.5
     nextVersion: 
-- packageId: com.unity.test-framework@1.1.31
+- packageId: com.unity.test-framework@1.1.33
   testable: 0
   isDirectDependency: 1
-  version: 1.1.31
+  version: 1.1.33
   source: 1
-  resolvedPath: F:\Shattered-World\Library\PackageCache\com.unity.test-framework@1.1.31
+  resolvedPath: F:\Shattered-World\Library\PackageCache\com.unity.test-framework@1.1.33
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -657,13 +657,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 637804266210000000
+  datePublishedTicks: 637938212700000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.com/Unity-Technologies/com.unity.test-framework.git
-    revision: 438b0defc147c9be5c969ca79ff03a722b4590ed
+    revision: 34a4d423d64926635eb36d3bb86276179cc186e1
     path: 
   unityLifecycle:
     version: 1.1.31
