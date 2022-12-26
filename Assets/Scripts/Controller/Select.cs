@@ -11,7 +11,7 @@ public class Select : MonoBehaviour
 
     private void Awake()
     {
-        cam = this.GetComponent<Camera>();
+        cam = GetComponent<Camera>();
         Inventory_Canvas = GameObject.Find("Inventory_Canvas");
         Inventory_Canvas.SetActive(false);
     }
@@ -25,23 +25,27 @@ public class Select : MonoBehaviour
         }
         else if(Input.GetMouseButtonDown(1)) // right click moves the target //
         {
-            Debug.Log("Geçti");
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
             if (CurrentSelectedEntity == null) { Debug.Log("Nothing to move"); return; }
             if (!CurrentSelectedEntity.CompareTag("Unit")) { return; }
             if (!CurrentSelectedEntity.TryGetComponent<NavMeshAgent>(out var navmesh_temp)) { return; }
 
             Unit_Controller unit_temp = navmesh_temp.GetComponent<Unit_Controller>();
 
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
             {
-                unit_temp.MoveTo(hit.transform);
-            }      
+                unit_temp.ChangeDirection(hit.point);
+                Debug.Log(hit.transform.position);
+            }
+            else
+            {
+                Debug.Log("Could not move");
+            }
         }
     }
 
-    [System.Obsolete] // because of GetAllChildren() //
+    [System.Obsolete] // because of GetAllChildren() this function is obsolete //
     private void Select_Object() // Select a playable object by raycasting the target should be on the corresponding layer mask //
     {
         //Debug.Log("It works");
@@ -49,17 +53,16 @@ public class Select : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layer_mask))
         {
-            GameObject temp = hit.transform.gameObject;
-            CurrentSelectedEntity = temp;
-            Debug.Log("Hit: " + temp.name);
-            if (temp == null) { return; } // if nothing hit the raycast return //
-            if (!hit.transform.CompareTag(tag_of_object)) { return; } // if the object is not on a desirable tag end execution of this function //
-            if (temp.GetComponent<Inventory_Manager>() == null) { return; } // if the object does not have an inventory script exit execution //
+            CurrentSelectedEntity = hit.transform.gameObject;
+            Debug.Log("Hit: " + CurrentSelectedEntity.name);
+            if (CurrentSelectedEntity == null) { return; } // if nothing hit the raycast return //
+            if (!CurrentSelectedEntity.CompareTag(tag_of_object)) { return; } // if the object is not on a desirable tag end execution of this function //
+            if (CurrentSelectedEntity.GetComponent<Inventory_Manager>() == null) { return; } // if the object does not have an inventory script exit execution //
 
             
             Inventory_Canvas.SetActive(true); // Activate Inventory Canvas for display //
             //Debug.Log("Display ınventory");
-            temp.GetComponent<Inventory_Manager>().DisplayInventory();
+            CurrentSelectedEntity.GetComponent<Inventory_Manager>().DisplayInventory();
         }
         else
         {

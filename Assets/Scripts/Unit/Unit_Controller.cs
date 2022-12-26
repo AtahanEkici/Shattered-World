@@ -1,11 +1,10 @@
 using UnityEngine;
 using UnityEngine.AI;
-
 public class Unit_Controller : MonoBehaviour
 {
     [Header("Navigation")]
     [SerializeField] private NavMeshAgent navmesh_agent;
-    //[SerializeField] public Transform move_target;
+    [SerializeField] private Vector3 destination;
 
     [Header("AI Behaviours")]
     [SerializeField] bool isAggressive = true;
@@ -19,10 +18,14 @@ public class Unit_Controller : MonoBehaviour
         navmesh_agent = GetComponent<NavMeshAgent>();
     }
 
-    public void MoveTo(Transform move_target)
+    public void ChangeDirection(Vector3 move_target)
     {
-        Debug.Log(move_target);
-        navmesh_agent.destination = move_target.position;
+        destination = move_target;
+    }
+
+    private void MoveToDestination()
+    {
+        navmesh_agent.destination = destination;
     }
 
     private void CheckBehaviour() // Check if more than 1 behaviour is set  if so change it//
@@ -36,6 +39,6 @@ public class Unit_Controller : MonoBehaviour
 
     private void Update()
     {
-        
+        MoveToDestination();
     }
 }
