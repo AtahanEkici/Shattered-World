@@ -62,8 +62,8 @@
     <Compile Include="Assets\Scripts\Camera\Camera_Controller.cs" />
     <Compile Include="Assets\Scripts\Inventory\Item.cs" />
     <Compile Include="Assets\Scripts\Controller\GlobalSelection.cs" />
-    <Compile Include="Assets\Scripts\Controller\Select.cs" />
     <Compile Include="Assets\Scripts\Scriptable Objects\Items\ItemTest.cs" />
+    <Compile Include="Assets\Scripts\Camera\Select.cs" />
     <Compile Include="Assets\Scripts\Building System\BuildingSystem.cs" />
     <Compile Include="Assets\Scripts\Controller\SelectionComponent.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory_Manager.cs" />

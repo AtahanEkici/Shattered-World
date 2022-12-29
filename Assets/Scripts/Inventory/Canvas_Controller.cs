@@ -16,7 +16,7 @@ public class Canvas_Controller : MonoBehaviour
     {
         for (int i=0;i<list.Count;i++)
         {
-            GameObject imgObject = new(list[i].name);
+            GameObject imgObject = new GameObject(""+i+"_icon");
             RectTransform trans = imgObject.AddComponent<RectTransform>();
             Image image = imgObject.AddComponent<Image>();
             imgObject.transform.SetParent(Inventory_Panel.transform);
@@ -33,7 +33,7 @@ public class Canvas_Controller : MonoBehaviour
     [System.Obsolete]
     public static void DeleteAllChildren()
     {
-        for(int i=0;i< Inventory_Panel.transform.GetChildCount(); i++)
+        for(int i=0;i<Inventory_Panel.transform.GetChildCount(); i++)
         {
             Destroy(Inventory_Panel.transform.GetChild(i).gameObject);
         }
