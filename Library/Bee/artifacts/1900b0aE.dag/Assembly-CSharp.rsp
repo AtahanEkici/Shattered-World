@@ -362,6 +362,7 @@
 "Assets/Scripts/Building System/ObjectDrag.cs"
 "Assets/Scripts/Building System/PlaceableObject.cs"
 "Assets/Scripts/Camera/Camera_Controller.cs"
+"Assets/Scripts/Camera/DrawSelectionRectangle.cs"
 "Assets/Scripts/Camera/Select.cs"
 "Assets/Scripts/Controller/GlobalSelection.cs"
 "Assets/Scripts/Controller/SelectedDictionary.cs"

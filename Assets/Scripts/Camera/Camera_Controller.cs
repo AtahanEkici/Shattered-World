@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 public class Camera_Controller : MonoBehaviour
 {
+    private Vector3 StartPosition;
+
     [Header("Mouse Magnify Inputs")]
     [SerializeField]private float Magnify_speed = 100f;
     [SerializeField]private float max_magnify = 0.2f;
@@ -19,6 +21,11 @@ public class Camera_Controller : MonoBehaviour
     [Header("Keyboard  Inputs")]
     [SerializeField] private float KeyboardMoveSpeed = 100f;
 
+    private void Start()
+    {
+        StartPosition = transform.position;
+    }
+
     private void LateUpdate()
     {
        MoveWithKeyboard();
@@ -31,6 +38,7 @@ public class Camera_Controller : MonoBehaviour
 
         float mouse_x = mousepos.x;
         float mouse_y = mousepos.y;
+
         float width = Screen.width;
         float height = Screen.height;
 
@@ -107,7 +115,7 @@ public class Camera_Controller : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
         if (x == 0 && y == 0) { return; }
-        Vector3 moveBy = (Vector3.right * x) + ((Vector3.up+Vector3.forward) * 0.5f * y);
+        Vector3 moveBy = (Vector3.right * x) + (0.5f * y * (Vector3.up+Vector3.forward));
         //Debug.DrawRay(Camera.main.transform.position, Vector3.forward * 100f,Color.black);
         transform.Translate(KeyboardMoveSpeed * Time.unscaledDeltaTime * moveBy.normalized);
     }
@@ -118,11 +126,9 @@ public class Camera_Controller : MonoBehaviour
 
         // Constraints - START// 
         if (MouseWheelInput == 0f) { return; } // if mouse 3 not engaged  do not execute//
-        float x_pos = transform.position.x;
-        float y_pos = transform.position.y;
         float z_pos = transform.position.z;
-        if (z_pos < min_magnify && MouseWheelInput < 0f) { transform.Translate(x_pos, y_pos, min_magnify); Debug.Log("minimum magnification reached"); return; }
-        if (z_pos > max_magnify && MouseWheelInput > 0f) { transform.Translate(x_pos, y_pos, max_magnify); Debug.Log("maximum magnification reached"); return; }
+        if (z_pos < min_magnify && MouseWheelInput < 0f) { Debug.Log("minimum magnification reached"); return; }
+        if (z_pos > max_magnify && MouseWheelInput > 0f) { Debug.Log("maximum magnification reached"); return; }
         // Constraints - END // 
 
         transform.Translate(Magnify_speed * MouseWheelInput * Time.unscaledDeltaTime * Vector3.forward);
