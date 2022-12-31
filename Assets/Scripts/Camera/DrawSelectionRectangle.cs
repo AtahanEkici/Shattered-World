@@ -7,12 +7,28 @@ public class DrawSelectionRectangle : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private Vector3 Start_pos;
     [SerializeField] private Vector3 End_pos;
+    [SerializeField] private GameObject InventoryCanvas;
 
     private void Awake()
     {
         cam = GetComponent<Camera>();
+        InventoryCanvas = cam.GetComponent<Select>().Inventory_Canvas;
         Start_pos = Vector3.zero;
         End_pos = Vector3.zero;
+    }
+
+    private void DrawQuad(Rect position, Color color)
+    {
+        Texture2D texture = new Texture2D(1, 1);
+        texture.SetPixel(0, 0, color);
+        texture.Apply();
+        GUI.skin.box.normal.background = texture;
+        GUI.Box(position, GUIContent.none);
+    }
+
+    private void OnGUI()
+    {
+        DrawQuad(new Rect(Start_pos, End_pos), Color.blue);
     }
 
     private void DrawRectangle()
@@ -50,6 +66,8 @@ public class DrawSelectionRectangle : MonoBehaviour
 
     private void Update()
     {
-        DrawRectangle();
+        //DrawRectangle();
+        Vector3 mousepos = Input.mousePosition;
+        //DrawQuad(new Rect(Start_pos, End_pos), Color.blue);
     }
 }
