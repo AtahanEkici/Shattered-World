@@ -1,56 +1,71 @@
-using System.Drawing;
-using UnityEditor;
+using System.Collections.Generic;
 using UnityEngine;
-
 public class DrawSelectionRectangle : MonoBehaviour
 {
+    Vector3 mouse_pos;
+
+    Rect rectangle;
+
+    [Header("Rectangle Dimensions")]
     [SerializeField] private Vector2 _box_end_pos;
     [SerializeField] private Vector2 _box_start_pos;
+
+    [Header("Texture of the Rectangle Drawing")]
     [SerializeField] private Texture2D texture;
+
+    [Header("Color of the Texture")]
     [SerializeField] private UnityEngine.Color color;
+
+    [SerializeField] private List<Unit_Controller> units;
 
     private void Awake()
     {
-        if(texture == null)
-        {
-            texture = Assigntexture();
-        }
+        if (texture == null) { texture = Assigntexture(); }
     }
     private void Update()
     {
+        GetPositions();
+    }
+    private void GetPositions() // get positions for rectangle //
+    {
+        mouse_pos = Input.mousePosition;
+
         if (Input.GetKey(KeyCode.Mouse0))
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                _box_start_pos = Input.mousePosition;
+                _box_start_pos = mouse_pos;
             }
-                
+
             else
             {
-                _box_end_pos = Input.mousePosition;
-            }      
+                _box_end_pos = mouse_pos;
+            }
         }
         else
         {
-            if (_box_end_pos != Vector2.zero && _box_start_pos != Vector2.zero)
+            if (_box_end_pos != Vector2.zero && _box_start_pos != Vector2.zero) // Handle unit selection right after selection //
             {
                 //HandleUnitSelection();
             }
             _box_end_pos = _box_start_pos = Vector2.zero;
         }
     }
+
     private Texture2D Assigntexture()
     {
-        Texture2D tex = new Texture2D(1, 1);
+        Texture2D tex = new (1, 1);
         tex.SetPixel(0, 0, color);
         return tex;
     }
-    private void OnGUI()
+    private void OnGUI() // Draw rectangle on Graphical User Interface using the data provided from GetPositions()  function //
     {
+        float screen_height = Screen.height;
+
         if (_box_start_pos != Vector2.zero && _box_end_pos != Vector2.zero)
         {
-            var rect = new Rect(_box_start_pos.x, Screen.height - _box_start_pos.y,_box_end_pos.x - _box_start_pos.x, -1 * (_box_end_pos.y - _box_start_pos.y));
-            GUI.DrawTexture(rect, texture);
+            rectangle = new (_box_start_pos.x,(screen_height - _box_start_pos.y),(_box_end_pos.x - _box_start_pos.x),(-1 * (_box_end_pos.y - _box_start_pos.y)));
+            GUI.DrawTexture(rectangle, texture);
         }
     }
 }
