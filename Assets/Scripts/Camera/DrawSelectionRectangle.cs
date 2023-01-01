@@ -1,73 +1,56 @@
-using Unity.VisualScripting;
+using System.Drawing;
 using UnityEditor;
 using UnityEngine;
 
 public class DrawSelectionRectangle : MonoBehaviour
 {
-    [SerializeField] private Camera cam;
-    [SerializeField] private Vector3 Start_pos;
-    [SerializeField] private Vector3 End_pos;
-    [SerializeField] private GameObject InventoryCanvas;
+    [SerializeField] private Vector2 _box_end_pos;
+    [SerializeField] private Vector2 _box_start_pos;
+    [SerializeField] private Texture2D texture;
+    [SerializeField] private UnityEngine.Color color;
 
     private void Awake()
     {
-        cam = GetComponent<Camera>();
-        InventoryCanvas = cam.GetComponent<Select>().Inventory_Canvas;
-        Start_pos = Vector3.zero;
-        End_pos = Vector3.zero;
-    }
-
-    private void DrawQuad(Rect position, Color color)
-    {
-        Texture2D texture = new Texture2D(1, 1);
-        texture.SetPixel(0, 0, color);
-        texture.Apply();
-        GUI.skin.box.normal.background = texture;
-        GUI.Box(position, GUIContent.none);
-    }
-
-    private void OnGUI()
-    {
-        DrawQuad(new Rect(Start_pos, End_pos), Color.blue);
-    }
-
-    private void DrawRectangle()
-    {
-        Vector3 mousepos = Input.mousePosition;
-        Vector3 mouse_point = Vector3.zero;
-
-        float screen_height = Screen.height;
-        float screen_width = Screen.width;
-
-        if (Input.GetMouseButtonDown(0)) // Get the initial coordinates of the mouse 
+        if(texture == null)
         {
-            //Debug.Log("Click");
-            Start_pos = cam.ScreenToWorldPoint(new Vector3(mousepos.x, mousepos.y, cam.nearClipPlane));
-            Debug.Log("Start Position: "+Start_pos);
-        }
-
-        else if(Input.GetMouseButton(0)) // if the mouse held down draw a simple rectangle from starting position to end position
-        {
-            //Debug.Log("Hold");
-        }
-
-        else if(Input.GetMouseButtonUp(0)) // if the user releases the mouse button //
-        {
-            //Debug.Log("Unclick");
-            End_pos = cam.ScreenToWorldPoint(new Vector3(mousepos.x, mousepos.y, cam.nearClipPlane));
-            Debug.Log("End Position: " +End_pos);
-        }
-
-        else
-        {
-            return;
+            texture = Assigntexture();
         }
     }
-
     private void Update()
     {
-        //DrawRectangle();
-        Vector3 mousepos = Input.mousePosition;
-        //DrawQuad(new Rect(Start_pos, End_pos), Color.blue);
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                _box_start_pos = Input.mousePosition;
+            }
+                
+            else
+            {
+                _box_end_pos = Input.mousePosition;
+            }      
+        }
+        else
+        {
+            if (_box_end_pos != Vector2.zero && _box_start_pos != Vector2.zero)
+            {
+                //HandleUnitSelection();
+            }
+            _box_end_pos = _box_start_pos = Vector2.zero;
+        }
+    }
+    private Texture2D Assigntexture()
+    {
+        Texture2D tex = new Texture2D(1, 1);
+        tex.SetPixel(0, 0, color);
+        return tex;
+    }
+    private void OnGUI()
+    {
+        if (_box_start_pos != Vector2.zero && _box_end_pos != Vector2.zero)
+        {
+            var rect = new Rect(_box_start_pos.x, Screen.height - _box_start_pos.y,_box_end_pos.x - _box_start_pos.x, -1 * (_box_end_pos.y - _box_start_pos.y));
+            GUI.DrawTexture(rect, texture);
+        }
     }
 }

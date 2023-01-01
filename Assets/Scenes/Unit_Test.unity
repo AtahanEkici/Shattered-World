@@ -774,9 +774,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886f6f13a432edc4baf69e46406ba842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  Start_pos: {x: 0, y: 0, z: 0}
-  End_pos: {x: 0, y: 0, z: 0}
+  _box_end_pos: {x: 0, y: 0}
+  _box_start_pos: {x: 0, y: 0}
+  texture: {fileID: 0}
+  color: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &1347907071 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 703460400820985697, guid: dce4f606eb95aec4eb9c0683c06ad31a, type: 3}
