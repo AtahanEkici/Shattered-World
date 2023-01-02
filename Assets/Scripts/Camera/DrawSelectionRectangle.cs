@@ -46,10 +46,15 @@ public class DrawSelectionRectangle : MonoBehaviour
         {
             if (_box_end_pos != Vector2.zero && _box_start_pos != Vector2.zero) // Handle unit selection right after selection //
             {
-                //HandleUnitSelection();
+                HandleUnitSelection();
             }
             _box_end_pos = _box_start_pos = Vector2.zero;
         }
+    }
+
+    private void HandleUnitSelection()
+    {
+
     }
 
     private Texture2D Assigntexture()
