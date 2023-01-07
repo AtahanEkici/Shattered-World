@@ -5,4 +5,3 @@ Library/*
 Logs/*
 obj/*
 *.csproj
-*.sln

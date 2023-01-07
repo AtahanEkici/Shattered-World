@@ -2,9 +2,6 @@ using UnityEngine;
 using UnityEngine.AI;
 public class Unit_Controller : MonoBehaviour
 {
-    [Header("Selection")]
-    [SerializeField] public bool IsSelected = false;
-
     [Header("Navigation")]
     [SerializeField] private NavMeshAgent navmesh_agent;
     [SerializeField] private Vector3 destination = Vector3.zero;

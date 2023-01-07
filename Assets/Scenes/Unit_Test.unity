@@ -715,7 +715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 20, z: -10}
+  m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -743,6 +743,10 @@ MonoBehaviour:
   down_boundary: -80
   left_boundary: -50
   right_boundary: 50
+  Initial_Cam_Rotation: {x: 0, y: 0, z: 0}
+  left_movement: 113
+  right_movement: 101
+  Rotation_Speed: 120
   KeyboardMoveSpeed: 100
 --- !u!114 &963194230
 MonoBehaviour:
@@ -771,13 +775,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 886f6f13a432edc4baf69e46406ba842, type: 3}
+  m_Script: {fileID: 11500000, guid: 3925b6297da01b14a8d645dad78d61fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _box_end_pos: {x: 0, y: 0}
   _box_start_pos: {x: 0, y: 0}
   texture: {fileID: 0}
   color: {r: 1, g: 1, b: 1, a: 0}
+  units: []
 --- !u!1 &1347907071 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 703460400820985697, guid: dce4f606eb95aec4eb9c0683c06ad31a, type: 3}

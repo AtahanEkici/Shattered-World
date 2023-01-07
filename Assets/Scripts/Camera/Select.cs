@@ -32,7 +32,7 @@ public class Select : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
             {
                 unit_temp.ChangeDirection(hit.point);
-                //Debug.Log(hit.transform.point);
+                //Debug.Log(hit.transform.position);
             }
             else
             {
@@ -48,18 +48,17 @@ public class Select : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layer_mask))
         {
-            if (CurrentSelectedEntity != null) { Debug.Log("New Unit Selected old UI dropped"); DisposeUI(); } // if the currently selected entity is not null dispose of the UI //
-            else if(CurrentSelectedEntity != hit.transform.gameObject) { Inventory_Canvas.SetActive(false); Canvas_Controller.DeleteAllChildren(); } // if the user selectes a different unit then previous selected unit delete its inventory from the screen //
+            if (CurrentSelectedEntity != null) { DisposeUI(); } // if the currently selected entity is not null dispose of the UI //
+            else if(CurrentSelectedEntity != hit.transform.gameObject) { Inventory_Canvas.SetActive(false); Canvas_Controller.DeleteAllChildren(); } // 
 
             CurrentSelectedEntity = hit.transform.gameObject;
 
             if (CurrentSelectedEntity == null) { Debug.Log("Not Selected any unit"); return; } // if nothing hit the raycast return //
 
-            if (CurrentSelectedEntity.GetComponent<Inventory_Manager>() == null) { Debug.Log("Unit: "+ CurrentSelectedEntity.name+ " does not have an inventory"); return; } // if the object does not have an inventory script exit execution //
+            if (CurrentSelectedEntity.GetComponent<Inventory_Manager>() == null) { Debug.Log("This Unit does not have an inventory"); return; } // if the object does not have an inventory script exit execution //
             Inventory_Canvas.SetActive(true); // Activate Inventory Canvas for display //
             CurrentSelectedEntity.GetComponent<Inventory_Manager>().DisplayInventory();
         }
-
         else
         {
             DisposeUI();
@@ -70,11 +69,7 @@ public class Select : MonoBehaviour
     {
         Inventory_Canvas.SetActive(false); // If nothing is selected don't dislpay the Inventory Canvas //
 
-        if (CurrentSelectedEntity == null)
-        {
-            Debug.Log("Nothing preferable is selected");
-            return;
-        }
+        if (CurrentSelectedEntity == null) { Debug.Log("Nothing preferable is selected"); }
 
         else
         {

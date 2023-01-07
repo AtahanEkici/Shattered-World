@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class DrawSelectionRectangle : MonoBehaviour
@@ -59,7 +60,7 @@ public class DrawSelectionRectangle : MonoBehaviour
 
     private Texture2D Assigntexture()
     {
-        Texture2D tex = new (1, 1);
+        Texture2D tex = new(1, 1);
         tex.SetPixel(0, 0, color);
         return tex;
     }
@@ -69,7 +70,7 @@ public class DrawSelectionRectangle : MonoBehaviour
 
         if (_box_start_pos != Vector2.zero && _box_end_pos != Vector2.zero)
         {
-            rectangle = new (_box_start_pos.x,(screen_height - _box_start_pos.y),(_box_end_pos.x - _box_start_pos.x),(-1 * (_box_end_pos.y - _box_start_pos.y)));
+            rectangle = new(_box_start_pos.x, (screen_height - _box_start_pos.y), (_box_end_pos.x - _box_start_pos.x), (-1 * (_box_end_pos.y - _box_start_pos.y)));
             GUI.DrawTexture(rectangle, texture);
         }
     }
