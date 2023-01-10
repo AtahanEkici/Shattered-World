@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class DrawSelectionRectangle : MonoBehaviour
@@ -19,7 +18,7 @@ public class DrawSelectionRectangle : MonoBehaviour
 
     [SerializeField] private List<Unit_Controller> units;
 
-    private void Awake()
+    private void Start()
     {
         if (texture == null) { texture = Assigntexture(); }
     }
@@ -55,13 +54,21 @@ public class DrawSelectionRectangle : MonoBehaviour
 
     private void HandleUnitSelection()
     {
-
+        Debug.Log(texture.alphaIsTransparency);
+        Debug.Log(color.a);
     }
 
     private Texture2D Assigntexture()
     {
-        Texture2D tex = new(1, 1);
+        Texture2D tex = new(1, 1, TextureFormat.RGBA32, false)
+        {
+            alphaIsTransparency = true
+        };
+
+        color.a = 1;
+        color = UnityEngine.Color.red;
         tex.SetPixel(0, 0, color);
+        Debug.Log("new texture created");
         return tex;
     }
     private void OnGUI() // Draw rectangle on Graphical User Interface using the data provided from GetPositions()  function //

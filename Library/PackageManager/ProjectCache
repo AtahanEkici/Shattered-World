@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638076383497329411
-    m_Hash: 317001897
+      ticks: 638089745143864846
+    m_Hash: 3370384395
   m_LockFileStatus:
     m_FilePath: F:/Shattered-World/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638076383497359454
-    m_Hash: 1825869240
+      ticks: 638089745143897706
+    m_Hash: 2433367244
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -329,12 +329,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.17.7
     nextVersion: 
-- packageId: com.unity.ide.rider@3.0.17
+- packageId: com.unity.ide.rider@3.0.18
   testable: 0
   isDirectDependency: 1
-  version: 3.0.17
+  version: 3.0.18
   source: 1
-  resolvedPath: F:\Shattered-World\Library\PackageCache\com.unity.ide.rider@3.0.17
+  resolvedPath: F:\Shattered-World\Library\PackageCache\com.unity.ide.rider@3.0.18
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -384,10 +384,12 @@ m_ResolvedPackages:
     - 3.0.15
     - 3.0.16
     - 3.0.17
+    - 3.0.18
     compatible:
     - 3.0.16
     - 3.0.17
-    verified: 3.0.17
+    - 3.0.18
+    verified: 3.0.18
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -405,13 +407,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 638058509720000000
+  datePublishedTicks: 638088746970000000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.rider@3.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
-    revision: b8990fdcd79dc09dafde1a184f5e4b898fb5f19b
+    revision: b40b39e6834c2915637f431d002d1f3dd8ec9ce5
     path: 
   unityLifecycle:
     version: 3.0.16
