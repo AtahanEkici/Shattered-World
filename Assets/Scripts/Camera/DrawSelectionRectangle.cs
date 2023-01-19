@@ -54,8 +54,8 @@ public class DrawSelectionRectangle : MonoBehaviour
 
     private void HandleUnitSelection()
     {
-        Debug.Log(texture.alphaIsTransparency);
-        Debug.Log(color.a);
+        //Debug.Log(texture.alphaIsTransparency);
+        //Debug.Log(color.a);
     }
 
     private Texture2D Assigntexture()

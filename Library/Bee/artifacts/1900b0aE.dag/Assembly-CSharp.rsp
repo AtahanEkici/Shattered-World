@@ -361,6 +361,7 @@
 "Assets/Scripts/Building System/BuildingSystem.cs"
 "Assets/Scripts/Building System/ObjectDrag.cs"
 "Assets/Scripts/Building System/PlaceableObject.cs"
+"Assets/Scripts/Camera/CameraSocket.cs"
 "Assets/Scripts/Camera/Camera_Controller.cs"
 "Assets/Scripts/Camera/DrawSelectionRectangle.cs"
 "Assets/Scripts/Camera/Select.cs"

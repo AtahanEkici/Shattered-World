@@ -10,7 +10,7 @@ public class Inventory_Manager : MonoBehaviour
     }
     public void DisplayInventory()
     {
-        Debug.Log("Displaying "+this.name+" inventory");
+        //Debug.Log("Displaying "+this.name+" inventory");
         Canvas_Controller.AddImages(items);
         //this.DisplayItemNames(items);
     }
