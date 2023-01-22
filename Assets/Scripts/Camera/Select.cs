@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 public class Select : MonoBehaviour
 {
-    private Vector3 free_cam_position = Vector3.zero;
-
     [SerializeField] private Camera cam;
-    [SerializeField] private GameObject CurrentSelectedEntity = null;
+    [SerializeField] public GameObject CurrentSelectedEntity = null;
     [SerializeField] private LayerMask layer_mask;
     [SerializeField] public GameObject Inventory_Canvas; // encapsulation is set to public because other classes use this reference to access it's functions //
     private void Awake()
@@ -16,33 +14,13 @@ public class Select : MonoBehaviour
     [System.Obsolete]
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0)) // left click selects the target //
-        {
-            Select_Object();
-        }
-        else if(Input.GetMouseButtonDown(1)) // right click moves the target //
-        {
-            MoveTarget();
-        }
-
-        if (CurrentSelectedEntity != null && CurrentSelectedEntity.GetComponent<CameraSocket>() != null) // Lerp into first person camera //
-        {
-
-        }
+        Select_Object();
+        MoveTarget();
     }
-
-    private void LerpIntoThirdPerson()
-    {
-
-    }
-
-    private void LerpIntoFirstPerson()
-    {
-
-    }
-
     private void MoveTarget()
     {
+        if (!Input.GetMouseButtonDown(1)) { return; }
+
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
         if (CurrentSelectedEntity == null) { return; }
@@ -61,6 +39,8 @@ public class Select : MonoBehaviour
     [System.Obsolete] // because of GetAllChildren() this function is obsolete //
     private void Select_Object() // Select a playable object by raycasting the target should be on the corresponding layer mask //
     {
+        if (!Input.GetMouseButtonDown(0)) { return; }
+
         //Debug.Log("It works");
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 

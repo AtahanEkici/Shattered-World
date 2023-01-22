@@ -68,10 +68,11 @@
     <Compile Include="Assets\Scripts\Building System\BuildingSystem.cs" />
     <Compile Include="Assets\Scripts\Controller\SelectionComponent.cs" />
     <Compile Include="Assets\Scripts\Inventory\Inventory_Manager.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraSocket.cs" />
     <Compile Include="Assets\Scripts\Controller\SelectedDictionary.cs" />
     <Compile Include="Assets\Scripts\Inventory\Canvas_Controller.cs" />
     <Compile Include="Assets\Scripts\Building System\PlaceableObject.cs" />
-    <Compile Include="Assets\Scripts\Camera\CameraSocket.cs" />
+    <Compile Include="Assets\Scripts\Camera\SwapCamera.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

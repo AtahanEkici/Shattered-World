@@ -51,13 +51,11 @@ public class DrawSelectionRectangle : MonoBehaviour
             _box_end_pos = _box_start_pos = Vector2.zero;
         }
     }
-
     private void HandleUnitSelection()
     {
         //Debug.Log(texture.alphaIsTransparency);
         //Debug.Log(color.a);
     }
-
     private Texture2D Assigntexture()
     {
         Texture2D tex = new(1, 1, TextureFormat.RGBA32, false)
@@ -65,10 +63,12 @@ public class DrawSelectionRectangle : MonoBehaviour
             alphaIsTransparency = true
         };
 
+        /* 
         color.a = 1;
-        color = UnityEngine.Color.red;
-        tex.SetPixel(0, 0, color);
-        Debug.Log("new texture created");
+        color = UnityEngine.Color.white;
+        tex.SetPixel(0, 1, color);
+        tex.Apply();
+        */
         return tex;
     }
     private void OnGUI() // Draw rectangle on Graphical User Interface using the data provided from GetPositions()  function //

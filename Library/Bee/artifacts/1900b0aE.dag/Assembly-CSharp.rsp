@@ -365,6 +365,7 @@
 "Assets/Scripts/Camera/Camera_Controller.cs"
 "Assets/Scripts/Camera/DrawSelectionRectangle.cs"
 "Assets/Scripts/Camera/Select.cs"
+"Assets/Scripts/Camera/SwapCamera.cs"
 "Assets/Scripts/Controller/GlobalSelection.cs"
 "Assets/Scripts/Controller/SelectedDictionary.cs"
 "Assets/Scripts/Controller/SelectionComponent.cs"
