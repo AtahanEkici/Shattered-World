@@ -1,8 +1,9 @@
 *.meta
 *.7z
 *.tar
+*.csproj
+*.sln
+
 Library/*
 Logs/*
 obj/*
-*.csproj
-*.sln
